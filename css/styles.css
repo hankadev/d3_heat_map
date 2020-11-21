@@ -22,8 +22,9 @@ svg {
   color: #000;
 }
 
-#legend {
-  margin-top: -5px;
+#wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 #tooltip {

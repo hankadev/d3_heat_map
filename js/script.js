@@ -126,37 +126,33 @@
           tooltip.style('visibility', 'hidden');
         });
 
-      // create legend
-      const legendRectWidht = 80;
+      // add legend
+      const legend = d3
+        .select('#legend')
+        .append('svg')
+        .attr('width', 150)
+        .attr('height', height)
 
-      const legend =
-        d3.select('#legend')
-          .append('svg')
-          .attr('width', width)
-          .attr('height', 50)
-          .append("g")
-          .attr('transform', 'translate(' + paddingW + ', 0)')
-          .attr('id', 'legend')
-
-      legend.selectAll('rect')
-        .data(colors.reverse())
-        .enter()
-        .append('rect')
-        .attr('x', (item, index) => index * legendRectWidht)
-        .attr('y', 0)
-        .attr('width', legendRectWidht)
-        .attr('height', 20)
-        .attr('fill', c => c);
-
-      legend.selectAll('text')
-        .data(texts.reverse())
-        .enter()
+      legend
         .append('text')
-        .attr('x', (item, index) => index * legendRectWidht)
-        .attr('y', 35)
-        .attr('width', 0)
-        .attr('height', 20)
-        .text(t => t)
+        .attr('x', 0)
+        .attr('y', 90)
+        .style('text-anchor', 'start')
+        .text('Temperature');
+
+      for (var i = 0; i < colors.length; i++) {
+        legend.append('rect')
+          .attr('width', 20)
+          .attr('height', 20)
+          .attr('x', 0)
+          .attr('y', 100 + i * 25)
+          .attr('fill', colors[i]);
+        legend.append('text')
+          .attr('x', 25)
+          .attr('y', 115 + i * 25)
+          .style('text-anchor', 'start')
+          .text(texts[i]);
+      }
     }
 
   });
