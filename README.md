@@ -2,7 +2,7 @@
 
 This is my implementation of [Free Code Camp's](https://www.freecodecamp.org/) Visualize Data with a Heat Map project.
 
-[view in browser](https://hanny21.github.io/d3_heat_map/)
+[view in browser](https://hankadev.github.io/d3_heat_map/)
 
 ## Objective
 
